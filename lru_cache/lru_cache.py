@@ -14,7 +14,12 @@ class LRUCache:
     """
 
     def __init__(self, limit=10):
-        pass
+        self.storage = DoublyLinkedList()
+        self.lookup = dict()
+        self.limit = limit
+
+    def __len__(self):
+        return len(self.storage)
 
     """
     Retrieves the value associated with the given key. Also
