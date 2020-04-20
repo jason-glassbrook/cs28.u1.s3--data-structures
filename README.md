@@ -17,24 +17,24 @@ Stretch Goals:
 
 ## Tasks
 
-*   Day 1 In Class:
+*   [ ] Day 1 In Class:
     `doubly_linked_list`
-*   Day 1 Homework:
+*   [ ] Day 1 Homework:
     `queue_and_stack`
-*   Day 2 In Class:
+*   [ ] Day 2 In Class:
     No Starter.
     Interview problems described below.
-*   Day 2 Homework:
+*   [ ] Day 2 Homework:
     `lru_cache`
-*   Day 3 In Class:
+*   [ ] Day 3 In Class:
     No Starter.
     Research and planning exercise below.
-*   Day 3 Homework:
+*   [ ] Day 3 Homework:
     `binary_search_tree` part 1
-*   Day 4 In Class:
+*   [ ] Day 4 In Class:
     No Starter.
     White-boarding exercise below.
-*   Day 4 Homework:
+*   [ ] Day 4 Homework:
     `binary_search_tree` part 2
 
  > NOTE:
