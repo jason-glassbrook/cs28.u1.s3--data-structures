@@ -14,10 +14,10 @@ class Stack:
         return len(self.storage)
 
     def push(self, value):
-        pass
+        self.storage.add_to_head(value)
 
     def pop(self):
-        pass
+        return self.storage.remove_from_head()
 
     def len(self):
         return len(self)
