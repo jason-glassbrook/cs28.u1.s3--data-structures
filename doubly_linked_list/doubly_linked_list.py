@@ -91,8 +91,12 @@ class DoublyLinkedList:
     """
 
     def remove_from_head(self):
-        value = self.head.value
-        self.delete(self.head)
+        value = None
+
+        if self.head:
+            value = self.head.value
+            self.delete(self.head)
+
         return value
 
     """
@@ -123,8 +127,12 @@ class DoublyLinkedList:
     """
 
     def remove_from_tail(self):
-        value = self.tail.value
-        self.delete(self.tail)
+        value = None
+
+        if self.tail:
+            value = self.tail.value
+            self.delete(self.tail)
+
         return value
 
     """
