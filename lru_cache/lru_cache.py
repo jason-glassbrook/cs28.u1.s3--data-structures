@@ -1,7 +1,7 @@
 import sys
 sys.path.append('../doubly_linked_list')
 
-from doubly_linked_list import DoublyLinkedList
+from doubly_linked_list import ListNode, DoublyLinkedList
 
 
 class LRUCache:
@@ -30,7 +30,22 @@ class LRUCache:
     """
 
     def get(self, key):
-        pass
+        value = None
+
+        # if key exists
+        if key in self.lookup:
+            # find the node
+            node = self.lookup[key]
+            # move it to the front
+            self.storage.move_to_front(node)
+            # give the value
+            (__, value) = node.value
+
+        # if key doesn't exist
+        else:
+            pass
+
+        return value
 
     """
     Adds the given key-value pair to the cache. The newly-
