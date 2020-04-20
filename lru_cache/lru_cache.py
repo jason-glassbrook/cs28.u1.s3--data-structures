@@ -44,4 +44,26 @@ class LRUCache:
     """
 
     def set(self, key, value):
+        # if key exists
+        if key in self.lookup:
+            # get the node
+            node = self.lookup[key]
+            # move it to the front
+            self.storage.move_to_front(node)
+            # overwrite the value
+            node.value = (key, value)
+
+        # if key doesn't exist
+        else:
+            # add key-value to .storage, .lookup
+            self.storage.add_to_head((key, value))
+            self.lookup[key] = self.storage.head
+
+        # ensure length is under limit
+        if len(self) > self.limit:
+            # remove last node from .storage
+            (old_key, __) = self.storage.remove_from_tail()
+            # remove from .lookup
+            del self.lookup[old_key]
+
         pass
