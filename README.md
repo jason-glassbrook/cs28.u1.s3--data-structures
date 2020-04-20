@@ -17,7 +17,7 @@ Stretch Goals:
 
 ## Tasks
 
-*   [ ] Day 1 In Class:
+*   [x] Day 1 In Class:
     `doubly_linked_list`
 *   [ ] Day 1 Homework:
     `queue_and_stack`
