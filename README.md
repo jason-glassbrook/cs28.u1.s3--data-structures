@@ -24,7 +24,7 @@ Stretch Goals:
 *   [ ] Day 2 In Class:
     No Starter.
     Interview problems described below.
-*   [ ] Day 2 Homework:
+*   [x] Day 2 Homework:
     `lru_cache`
 *   [ ] Day 3 In Class:
     No Starter.
