@@ -124,17 +124,7 @@ class BinarySearchTree:
     # You may use a recursive or iterative approach
     def for_each(self, cb):
 
-        # 1. left
-        if self._has_left_BST():
-            self.left.for_each(cb)
-
-        # 2. center
-        cb(self.value)
-
-        # 3. right
-        if self._has_right_BST():
-            self.right.for_each(cb)
-
+        self.apply_DFT_LNR(cb)
         return
 
     #---------------------------------------
@@ -144,7 +134,9 @@ class BinarySearchTree:
     # Print all the values in order from low to high
     # Hint:  Use a recursive, depth first traversal
     def in_order_print(self, node):
-        pass
+
+        self.apply_DFT_LNR(print)
+        return
 
     # Print the value of every node, starting with the given node,
     # in an iterative breadth first traversal
@@ -163,11 +155,15 @@ class BinarySearchTree:
 
     # Print Pre-order recursive DFT
     def pre_order_dft(self, node):
-        pass
+
+        self.apply_DFT_NLR(print)
+        return
 
     # Print Post-order recursive DFT
     def post_order_dft(self, node):
-        pass
+
+        self.apply_DFT_LRN(print)
+        return
 
     ########################################
     # TRAVERSAL METHODS
