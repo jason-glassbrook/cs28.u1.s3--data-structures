@@ -66,8 +66,25 @@ class BinarySearchTree:
     #---------------------------------------
 
     # Insert the given value into the tree
-    def insert(self, value):
-        pass
+    def insert(self, new_value):
+
+        if new_value > self.value:
+
+            if isinstance(self.right, BinarySearchTree):
+                self.right.insert(new_value)
+
+            else:
+                self.right = BinarySearchTree(new_value)
+
+        else:
+
+            if isinstance(self.left, BinarySearchTree):
+                self.left.insert(new_value)
+
+            else:
+                self.left = BinarySearchTree(new_value)
+
+        return
 
     # Return True if the tree contains the value
     # False if it does not
