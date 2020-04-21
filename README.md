@@ -29,7 +29,7 @@ Stretch Goals:
 *   [ ] Day 3 In Class:
     No Starter.
     Research and planning exercise below.
-*   [ ] Day 3 Homework:
+*   [x] Day 3 Homework:
     `binary_search_tree` part 1
 *   [ ] Day 4 In Class:
     No Starter.
