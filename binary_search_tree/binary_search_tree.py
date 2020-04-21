@@ -7,10 +7,18 @@ from dll_stack import Stack
 
 class BinarySearchTree:
 
+    ########################################
+    # EXTERNAL
+    ########################################
+
     def __init__(self, value):
         self.value = value
         self.left = None
         self.right = None
+
+    #---------------------------------------
+    # DAY 1
+    #---------------------------------------
 
     # Insert the given value into the tree
     def insert(self, value):
@@ -30,7 +38,9 @@ class BinarySearchTree:
     def for_each(self, cb):
         pass
 
-    # DAY 2 Project -----------------------
+    #---------------------------------------
+    # DAY 2
+    #---------------------------------------
 
     # Print all the values in order from low to high
     # Hint:  Use a recursive, depth first traversal
@@ -47,7 +57,9 @@ class BinarySearchTree:
     def dft_print(self, node):
         pass
 
-    # STRETCH Goals -------------------------
+    #---------------------------------------
+    # STRETCH
+    #---------------------------------------
     # Note: Research may be required
 
     # Print Pre-order recursive DFT
@@ -57,3 +69,5 @@ class BinarySearchTree:
     # Print Post-order recursive DFT
     def post_order_dft(self, node):
         pass
+
+    ########################################
