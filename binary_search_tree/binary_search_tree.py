@@ -8,6 +8,34 @@ from dll_stack import Stack
 class BinarySearchTree:
 
     ########################################
+    # PROPERTIES
+    ########################################
+
+    @property
+    def left(self):
+        return self._left
+
+    @left.setter
+    def left(self, left):
+        self._left = left
+
+    @left.deleter
+    def left(self):
+        self._left = None
+
+    @property
+    def right(self):
+        return self._right
+
+    @right.setter
+    def right(self, right):
+        self._right = right
+
+    @right.deleter
+    def right(self):
+        self._right = None
+
+    ########################################
     # EXTERNAL
     ########################################
 
