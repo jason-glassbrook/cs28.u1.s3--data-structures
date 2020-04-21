@@ -123,7 +123,19 @@ class BinarySearchTree:
     # Call the function `cb` on the value of each node
     # You may use a recursive or iterative approach
     def for_each(self, cb):
-        pass
+
+        # 1. left
+        if self._has_left_BST():
+            self.left.for_each(cb)
+
+        # 2. center
+        cb(self.value)
+
+        # 3. right
+        if self._has_right_BST():
+            self.right.for_each(cb)
+
+        return
 
     #---------------------------------------
     # DAY 2
