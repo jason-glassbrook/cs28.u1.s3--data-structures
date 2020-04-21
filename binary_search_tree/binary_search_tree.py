@@ -13,38 +13,52 @@ class BinarySearchTree:
 
     @property
     def left(self):
+
         return self._left
 
     @left.setter
     def left(self, left):
+
         self._left = left
+        return
 
     @left.deleter
     def left(self):
+
         self._left = None
+        return
 
     @property
     def right(self):
+
         return self._right
 
     @right.setter
     def right(self, right):
+
         self._right = right
+        return
 
     @right.deleter
     def right(self):
+
         self._right = None
+        return
 
     ########################################
     # EXTERNAL
     ########################################
 
     def __init__(self, value, left=None, right=None):
+
         self.value = value
         self.left = left
         self.right = right
 
+        return
+
     def __len__(self):
+
         return 1 + self._len_or(self.left) + self._len_or(self.right)
 
     #---------------------------------------
