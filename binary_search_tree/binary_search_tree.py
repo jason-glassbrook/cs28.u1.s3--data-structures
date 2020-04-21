@@ -102,9 +102,23 @@ class BinarySearchTree:
         else:
             return False
 
+    # Return the minimum value found in the tree
+    def get_min(self):
+
+        if self._has_left_BST():
+            return self.left.get_min()
+
+        else:
+            return self.value
+
     # Return the maximum value found in the tree
     def get_max(self):
-        pass
+
+        if self._has_right_BST():
+            return self.right.get_max()
+
+        else:
+            return self.value
 
     # Call the function `cb` on the value of each node
     # You may use a recursive or iterative approach
