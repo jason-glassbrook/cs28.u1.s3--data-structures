@@ -70,7 +70,7 @@ class BinarySearchTree:
 
         if new_value < self.value:
 
-            if isinstance(self.left, BinarySearchTree):
+            if self._has_left_BST():
                 self.left.insert(new_value)
 
             else:
@@ -78,7 +78,7 @@ class BinarySearchTree:
 
         else:
 
-            if isinstance(self.right, BinarySearchTree):
+            if self._has_right_BST():
                 self.right.insert(new_value)
 
             else:
@@ -93,10 +93,10 @@ class BinarySearchTree:
         if target_value == self.value:
             return True
 
-        elif target_value < self.value and isinstance(self.left, BinarySearchTree):
+        elif target_value < self.value and self._has_left_BST():
             return self.left.contains(target_value)
 
-        elif target_value > self.value and isinstance(self.right, BinarySearchTree):
+        elif target_value > self.value and self._has_right_BST():
             return self.right.contains(target_value)
 
         else:
@@ -155,5 +155,13 @@ class BinarySearchTree:
 
         except TypeError:
             return default
+
+    def _has_left_BST(self):
+
+        return isinstance(self.left, BinarySearchTree)
+
+    def _has_right_BST(self):
+
+        return isinstance(self.right, BinarySearchTree)
 
     ########################################
