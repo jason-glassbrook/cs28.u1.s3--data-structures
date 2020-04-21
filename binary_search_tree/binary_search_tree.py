@@ -11,10 +11,13 @@ class BinarySearchTree:
     # EXTERNAL
     ########################################
 
-    def __init__(self, value):
+    def __init__(self, value, left=None, right=None):
         self.value = value
-        self.left = None
-        self.right = None
+        self.left = left
+        self.right = right
+
+    def __len__(self):
+        return 1 + self._len_or(self.left) + self._len_or(self.right)
 
     #---------------------------------------
     # DAY 1
@@ -69,5 +72,16 @@ class BinarySearchTree:
     # Print Post-order recursive DFT
     def post_order_dft(self, node):
         pass
+
+    ########################################
+    # INTERNAL
+    ########################################
+
+    @staticmethod
+    def _len_or(thing, default=0):
+        try:
+            return len(thing)
+        except TypeError:
+            return default
 
     ########################################
