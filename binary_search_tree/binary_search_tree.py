@@ -170,6 +170,88 @@ class BinarySearchTree:
         pass
 
     ########################################
+    # TRAVERSAL METHODS
+    ########################################
+
+    # "pre-order, rightward"
+    def apply_DFT_NLR(self, fun):
+
+        fun(self.value)
+
+        if self._has_left_BST():
+            self.left.apply_DFT_NLR(fun)
+
+        if self._has_right_BST():
+            self.right.apply_DFT_NLR(fun)
+
+        return
+
+    # "pre-order, leftward"
+    def apply_DFT_NRL(self, fun):
+
+        fun(self.value)
+
+        if self._has_right_BST():
+            self.right.apply_DFT_NRL(fun)
+
+        if self._has_left_BST():
+            self.left.apply_DFT_NRL(fun)
+
+        return
+
+    # "in-order rightward"
+    def apply_DFT_LNR(self, fun):
+
+        if self._has_left_BST():
+            self.left.apply_DFT_LNR(fun)
+
+        fun(self.value)
+
+        if self._has_right_BST():
+            self.right.apply_DFT_LNR(fun)
+
+        return
+
+    # "in-order, leftward"
+    def apply_DFT_RNL(self, fun):
+
+        if self._has_right_BST():
+            self.right.apply_DFT_RNL(fun)
+
+        fun(self.value)
+
+        if self._has_left_BST():
+            self.left.apply_DFT_RNL(fun)
+
+        return
+
+    # "post-order, rightward"
+    def apply_DFT_LRN(self, fun):
+
+        if self._has_left_BST():
+            self.left.apply_DFT_LRN(fun)
+
+        if self._has_right_BST():
+            self.right.apply_DFT_LRN(fun)
+
+        fun(self.value)
+
+        return
+
+    # "post-order, leftward"
+    def apply_DFT_RLN(self, fun):
+
+        if self._has_right_BST():
+            self.right.apply_DFT_RLN(fun)
+
+        if self._has_left_BST():
+            self.left.apply_DFT_RLN(fun)
+
+        fun(self.value)
+
+        return
+
+    ########################################
     # INTERNAL
     ########################################
 
