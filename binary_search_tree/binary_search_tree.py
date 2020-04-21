@@ -88,8 +88,19 @@ class BinarySearchTree:
 
     # Return True if the tree contains the value
     # False if it does not
-    def contains(self, target):
-        pass
+    def contains(self, target_value):
+
+        if target_value == self.value:
+            return True
+
+        elif target_value < self.value and isinstance(self.left, BinarySearchTree):
+            return self.left.contains(target_value)
+
+        elif target_value > self.value and isinstance(self.right, BinarySearchTree):
+            return self.right.contains(target_value)
+
+        else:
+            return False
 
     # Return the maximum value found in the tree
     def get_max(self):
@@ -138,8 +149,10 @@ class BinarySearchTree:
 
     @staticmethod
     def _len_or(thing, default=0):
+
         try:
             return len(thing)
+
         except TypeError:
             return default
 
