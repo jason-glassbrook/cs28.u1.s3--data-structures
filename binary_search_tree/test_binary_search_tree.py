@@ -2,10 +2,12 @@ import unittest
 import random
 import sys
 import io
+
 from binary_search_tree import BinarySearchTree
 
 
 class BinarySearchTreeTests(unittest.TestCase):
+
     def setUp(self):
         self.bst = BinarySearchTree(5)
 
@@ -16,7 +18,7 @@ class BinarySearchTreeTests(unittest.TestCase):
         self.bst.insert(6)
         self.assertEqual(self.bst.left.right.value, 3)
         self.assertEqual(self.bst.right.left.value, 6)
-        
+
     def test_handle_dupe_insert(self):
         self.bst2 = BinarySearchTree(1)
         self.bst2.insert(1)
@@ -66,8 +68,7 @@ class BinarySearchTreeTests(unittest.TestCase):
         # WARNING:  Tests are for Print()
         # Debug calls to Print() in functions will cause failure
 
-        stdout_ = sys.stdout  # Keep previous value
-        sys.stdout = io.StringIO()
+        stdout_ = sys.stdout   # Keep previous value
 
         self.bst = BinarySearchTree(1)
         self.bst.insert(8)
@@ -78,22 +79,24 @@ class BinarySearchTreeTests(unittest.TestCase):
         self.bst.insert(4)
         self.bst.insert(2)
 
+        sys.stdout = io.StringIO()
         self.bst.in_order_print(self.bst)
-
         output = sys.stdout.getvalue()
         self.assertEqual(output, "1\n2\n3\n4\n5\n6\n7\n8\n")
 
         sys.stdout = io.StringIO()
         self.bst.bft_print(self.bst)
         output = sys.stdout.getvalue()
-        self.assertTrue(output == "1\n8\n5\n3\n7\n2\n4\n6\n" or
-                        output == "1\n8\n5\n7\n3\n6\n4\n2\n")
+        self.assertTrue(
+            output == "1\n8\n5\n3\n7\n2\n4\n6\n" or output == "1\n8\n5\n7\n3\n6\n4\n2\n"
+        )
 
         sys.stdout = io.StringIO()
         self.bst.dft_print(self.bst)
         output = sys.stdout.getvalue()
-        self.assertTrue(output == "1\n8\n5\n7\n6\n3\n4\n2\n" or
-                        output == "1\n8\n5\n3\n2\n4\n7\n6\n")
+        self.assertTrue(
+            output == "1\n8\n5\n7\n6\n3\n4\n2\n" or output == "1\n8\n5\n3\n2\n4\n7\n6\n"
+        )
 
         sys.stdout = io.StringIO()
         self.bst.pre_order_dft(self.bst)
@@ -105,7 +108,8 @@ class BinarySearchTreeTests(unittest.TestCase):
         output = sys.stdout.getvalue()
         self.assertEqual(output, "2\n4\n3\n6\n7\n5\n8\n1\n")
 
-        sys.stdout = stdout_  # Restore stdout
+        sys.stdout = stdout_   # Restore stdout
+
 
 if __name__ == '__main__':
     unittest.main()

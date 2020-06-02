@@ -1,8 +1,10 @@
 import unittest
+
 from dll_stack import Stack
 
 
 class QueueTests(unittest.TestCase):
+
     def setUp(self):
         self.s = Stack()
 
